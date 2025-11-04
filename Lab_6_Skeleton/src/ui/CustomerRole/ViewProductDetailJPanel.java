@@ -27,8 +27,8 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.product = product;
         
-        txtProdName.setText(product.getProdName());
-        txtId.setText(String.valueOf(product.getModelNumber()));
+        nameField.setText(product.getProdName());
+        idField.setText(String.valueOf(product.getModelNumber()));
         txtPrice.setText(String.valueOf(product.getPrice()));
         txtAvail.setText(String.valueOf(product.getAvail()));
         

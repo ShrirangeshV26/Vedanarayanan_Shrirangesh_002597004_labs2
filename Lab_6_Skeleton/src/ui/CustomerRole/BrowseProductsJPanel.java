@@ -41,7 +41,7 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
       
         populateCombo();
         populateProductTable();
-        populatCartTable()
+        populatCartTable();
       
     }
 
