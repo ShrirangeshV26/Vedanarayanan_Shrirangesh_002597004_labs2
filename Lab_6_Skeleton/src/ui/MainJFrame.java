@@ -6,25 +6,37 @@
 package ui;
 
 import java.awt.CardLayout;
+import model.Business;
+import model.MasterOrderList;
 import model.SupplierDirectory;
 import ui.AdminRole.AdminWorkAreaJPanel;
+import ui.CustomerRole.CustomerWorkAreaJPanel;
 import ui.SupplierRole.LoginSupplierJPanel;
+
+/**
 
 /**
  *
  * @author archil
  */
 public class MainJFrame extends javax.swing.JFrame {
+    Business business;
+    SupplierDirectory supplierDirectory;
+    MasterOrderList masterOrderList;
 
     /**
      * Creates new form MainJFrame
      */
-    SupplierDirectory supplierDirectory;
+    
     
     public MainJFrame() {
         initComponents();
-        supplierDirectory = new SupplierDirectory();
+        business = new Business();
+        supplierDirectory = business.getSupplierDirectory();
+        masterOrderList = business.getMasterOrderList();
+        
         setSize(830,600);
+        
     }
 
     /**
@@ -139,7 +151,10 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSupplierActionPerformed
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
-
+        CustomerWorkAreaJPanel cwap = new CustomerWorkAreaJPanel(userProcessContainer, supplierDirectory, masterOrderList);
+        userProcessContainer.add("LoginSupplierJPanel", cwap);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCustomerActionPerformed
 
     /**
