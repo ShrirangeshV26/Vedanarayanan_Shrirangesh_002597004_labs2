@@ -17,7 +17,7 @@ import model.User;
 
 /**
  *
- * @author harshalneelkamal
+ * @author Shrirangesh
  */
 public class SocialMedia_Main {
 
@@ -95,6 +95,7 @@ public class SocialMedia_Main {
     private void runAnalysis(){
         // TODO
         helper.getAverageLikesPerComments();
-        helper.getMaxLikeCommentPost();
+        helper.getMaxLikeCommentPost();//q2
+        helper.getpostWithMostComments();//q3
     }
 }
